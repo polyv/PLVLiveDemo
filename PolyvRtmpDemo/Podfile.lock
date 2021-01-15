@@ -1,0 +1,93 @@
+PODS:
+  - Masonry (1.1.0)
+  - PLVLiveKit (1.2.4):
+    - PLVLiveKit/capture (= 1.2.4)
+    - PLVLiveKit/coder (= 1.2.4)
+    - PLVLiveKit/configuration (= 1.2.4)
+    - PLVLiveKit/filter (= 1.2.4)
+    - PLVLiveKit/GPUImage (= 1.2.4)
+    - PLVLiveKit/objects (= 1.2.4)
+    - PLVLiveKit/pili-librtmp (= 1.2.4)
+    - PLVLiveKit/publish (= 1.2.4)
+  - PLVLiveKit/capture (1.2.4):
+    - PLVLiveKit/filter
+  - PLVLiveKit/coder (1.2.4):
+    - PLVLiveKit/objects
+  - PLVLiveKit/configuration (1.2.4)
+  - PLVLiveKit/filter (1.2.4):
+    - PLVLiveKit/GPUImage
+    - PLVLiveKit/objects
+  - PLVLiveKit/GPUImage (1.2.4)
+  - PLVLiveKit/objects (1.2.4):
+    - PLVLiveKit/configuration
+  - PLVLiveKit/pili-librtmp (1.2.4)
+  - PLVLiveKit/publish (1.2.4):
+    - PLVLiveKit/objects
+    - PLVLiveKit/pili-librtmp
+  - PolyvBusinessSDK (0.15.0):
+    - PolyvBusinessSDK/Core (= 0.15.0)
+    - PolyvBusinessSDK/Socket (= 0.15.0)
+    - PolyvFoundationSDK (~> 0.12.0)
+  - PolyvBusinessSDK/Core (0.15.0):
+    - PolyvFoundationSDK (~> 0.12.0)
+  - PolyvBusinessSDK/Socket (0.15.0):
+    - PolyvFoundationSDK (~> 0.12.0)
+    - Socket.IO-Client-Swift (~> 14.0.0)
+  - PolyvFoundationSDK (0.12.0)
+  - PolyvLiveAPI (0.9.0)
+  - SDWebImage (3.8.3):
+    - SDWebImage/Core (= 3.8.3)
+  - SDWebImage/Core (3.8.3)
+  - Socket.IO-Client-Swift (14.0.0):
+    - Starscream (~> 3.0.6)
+  - Starscream (3.0.6)
+  - UMengUShare/Core (6.3.0):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.3.0)
+  - UMengUShare/Social/QQ (6.3.0):
+    - UMengUShare/Core
+  - UMengUShare/Social/Sina (6.3.0):
+    - UMengUShare/Core
+  - UMengUShare/Social/WeChat (6.3.0):
+    - UMengUShare/Core
+  - ZYCornerRadius (1.0.2)
+
+DEPENDENCIES:
+  - Masonry (~> 1.1)
+  - PLVLiveKit (~> 1.2.4)
+  - PolyvBusinessSDK (~> 0.15.0)
+  - PolyvLiveAPI (~> 0.9.0)
+  - SDWebImage (~> 3.8)
+  - UMengUShare/Social/QQ (~> 6.3.0)
+  - UMengUShare/Social/Sina (~> 6.3.0)
+  - UMengUShare/Social/WeChat (~> 6.3.0)
+  - ZYCornerRadius (~> 1.0.2)
+
+SPEC REPOS:
+  trunk:
+    - Masonry
+    - PLVLiveKit
+    - PolyvBusinessSDK
+    - PolyvFoundationSDK
+    - PolyvLiveAPI
+    - SDWebImage
+    - Socket.IO-Client-Swift
+    - Starscream
+    - UMengUShare
+    - ZYCornerRadius
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  PLVLiveKit: 19aa8ba83495e745d114a450f848f9251b6bbde5
+  PolyvBusinessSDK: 33c19f17c948d1a1078ebefc160e5bb6e5f423d3
+  PolyvFoundationSDK: 2061221d2a34f3d4b208464a63e985ac66bad05c
+  PolyvLiveAPI: 945944fa0bc1b13096792199add078c0507eb946
+  SDWebImage: a72e880a8fe0f7fc31efe15aaed443c074d2a80c
+  Socket.IO-Client-Swift: 21e6a8a23a7d367d5ddfab6cbbd3c679cf3c25d6
+  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
+  UMengUShare: b208ac3bcf1f63d11a100b359990e9d77a0f2085
+  ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
+
+PODFILE CHECKSUM: 2345a582fd1ce39a058383ad0fe0bf859b550f84
+
+COCOAPODS: 1.10.0.beta.2

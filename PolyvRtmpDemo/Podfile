@@ -1,0 +1,23 @@
+#source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, "9.0"
+
+use_frameworks!
+
+target 'PLVRtmpDemo' do
+  pod 'PLVLiveKit', '~> 1.2.4'
+  pod 'PolyvLiveAPI', '~> 0.9.0'
+  pod 'PolyvBusinessSDK', '~> 0.15.0'
+  # 如果同时集成云课堂SDK，移除 PolyvBusinessSDK 即可
+  #pod 'PolyvCloudClassSDK', '~> 0.13' # 最低0.13版本
+  
+  # Third Part
+  pod 'Masonry', '~> 1.1'
+  pod 'ZYCornerRadius', '~> 1.0.2'
+  pod 'SDWebImage', '~> 3.8'
+  
+  # ---- U-Share SDK
+  pod 'UMengUShare/Social/Sina', '~> 6.3.0'
+  pod 'UMengUShare/Social/WeChat', '~> 6.3.0'
+  pod 'UMengUShare/Social/QQ' , '~> 6.3.0'
+
+end

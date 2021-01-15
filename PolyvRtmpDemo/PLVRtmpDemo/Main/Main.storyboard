@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uh7-XY-82D">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="9rl-Km-nes">
+            <objects>
+                <viewController id="uh7-XY-82D" customClass="PLVLoginViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ohQ-8e-5Af">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="EZC-uK-TPd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="tMC-7f-ysc" userLabel="Out Stack View">
+                                <rect key="frame" x="25" y="182.5" width="325" height="222"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Aev-Ji-yj2" userLabel="In Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="148"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入频道号/子频道号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bbF-rN-rrs" customClass="PLVLoginTextField">
+                                                <rect key="frame" x="0.0" y="0.0" width="325" height="44"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="qh5-g4-GVP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入频道密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tmy-27-ubc" customClass="PLVLoginTextField">
+                                                <rect key="frame" x="0.0" y="64" width="325" height="44"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="IWv-Ed-9tq"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="trI-Rz-Ts7" userLabel="Remember Login" customClass="PLVCheckBox">
+                                                <rect key="frame" x="0.0" y="128" width="325" height="20"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="B3N-yd-Ay9"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="记住密码"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgL-Sr-IoU">
+                                        <rect key="frame" x="0.0" y="178" width="325" height="44"/>
+                                        <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="EC2-yv-lQZ"/>
+                                        </constraints>
+                                        <state key="normal" title="登录">
+                                            <color key="titleColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginButtonClick:" destination="uh7-XY-82D" eventType="touchUpInside" id="F7b-jI-7zo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="EgL-Sr-IoU" secondAttribute="trailing" id="3bq-ua-IpI"/>
+                                    <constraint firstItem="Aev-Ji-yj2" firstAttribute="leading" secondItem="tMC-7f-ysc" secondAttribute="leading" id="4K4-ph-62X"/>
+                                    <constraint firstItem="EgL-Sr-IoU" firstAttribute="leading" secondItem="tMC-7f-ysc" secondAttribute="leading" id="5D7-L3-NyK"/>
+                                    <constraint firstItem="Aev-Ji-yj2" firstAttribute="top" secondItem="tMC-7f-ysc" secondAttribute="top" id="Qtn-t6-vJz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Aev-Ji-yj2" secondAttribute="trailing" id="oLC-0b-uxg"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SpC-3F-rus" customClass="PLVCheckPrivacyView">
+                                <rect key="frame" x="34.5" y="424.5" width="306" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="gqL-1y-B8l"/>
+                                    <constraint firstAttribute="width" constant="306" id="jcT-hO-hrn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8Kc-Ca-8Zt"/>
+                        <color key="backgroundColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EZC-uK-TPd" firstAttribute="top" secondItem="ohQ-8e-5Af" secondAttribute="top" id="3dj-A8-tly"/>
+                            <constraint firstItem="tMC-7f-ysc" firstAttribute="centerX" secondItem="8Kc-Ca-8Zt" secondAttribute="centerX" id="7fW-aM-DSL"/>
+                            <constraint firstItem="EZC-uK-TPd" firstAttribute="leading" secondItem="8Kc-Ca-8Zt" secondAttribute="leading" id="FDY-fy-b9d"/>
+                            <constraint firstItem="SpC-3F-rus" firstAttribute="top" secondItem="tMC-7f-ysc" secondAttribute="bottom" constant="20" id="Jxb-5j-S66"/>
+                            <constraint firstItem="tMC-7f-ysc" firstAttribute="leading" secondItem="8Kc-Ca-8Zt" secondAttribute="leading" constant="25" id="bAN-VM-SCp"/>
+                            <constraint firstItem="SpC-3F-rus" firstAttribute="centerX" secondItem="ohQ-8e-5Af" secondAttribute="centerX" id="cZn-Ak-fWU"/>
+                            <constraint firstAttribute="bottom" secondItem="EZC-uK-TPd" secondAttribute="bottom" id="h41-Wu-XSy"/>
+                            <constraint firstItem="tMC-7f-ysc" firstAttribute="centerY" secondItem="ohQ-8e-5Af" secondAttribute="centerY" constant="-40" id="wPt-8T-L1Z"/>
+                            <constraint firstItem="8Kc-Ca-8Zt" firstAttribute="trailing" secondItem="EZC-uK-TPd" secondAttribute="trailing" id="yxj-VY-Rv9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="channelTextField" destination="bbF-rN-rrs" id="Zif-4T-9aq"/>
+                        <outlet property="inStackView" destination="Aev-Ji-yj2" id="ZbX-UN-va9"/>
+                        <outlet property="loginButton" destination="EgL-Sr-IoU" id="FGo-Dc-x7L"/>
+                        <outlet property="outStackView" destination="tMC-7f-ysc" id="KCn-v9-UbS"/>
+                        <outlet property="passwdTextField" destination="tmy-27-ubc" id="qg7-Lb-KUK"/>
+                        <outlet property="privacyView" destination="SpC-3F-rus" id="q5p-9Y-r0L"/>
+                        <outlet property="rememberLogin" destination="trI-Rz-Ts7" id="7rF-KU-R3e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LrG-KX-GPP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="YOS-O0-A3A">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <viewLayoutGuide key="safeArea" id="msE-zZ-ozM"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="-908.69565217391312" y="-885.32608695652186"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="login_bg.png" width="375" height="667"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
