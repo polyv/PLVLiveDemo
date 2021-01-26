@@ -37,12 +37,12 @@
 /// 配置社交账号
 - (void)configurationUMSocialManager {
     [[UMSocialManager defaultManager] openLog:NO];
-    [[UMSocialManager defaultManager] setUmSocialAppkey:@"581fedc88f4a9d50e6000179"];
+    [[UMSocialManager defaultManager] setUmSocialAppkey:@""];
     //NSLog(@"UMeng social version: %@", [UMSocialGlobal umSocialSDKVersion]);
     
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wx0046101038ed0eac" appSecret:@"fff2b2d27af7ad1f9aa8a32b804ba342" redirectURL:@"http://mobile.umeng.com/social"];
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1106006577" appSecret:@"Kodwrh9zDHx3kRNc" redirectURL:@"http://mobile.umeng.com/social"];
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"722016066"  appSecret:@"5392ee4f6375be721f4ece09326722ab" redirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"" appSecret:@"" redirectURL:@""];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"" appSecret:@"" redirectURL:@""];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@""  appSecret:@"" redirectURL:@""];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
