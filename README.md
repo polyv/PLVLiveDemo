@@ -82,7 +82,7 @@ target 'PLVRtmpDemo' do
     pod 'UMengUShare/Social/QQ' , '~> 6.3.0'
 end
 ```
-如果同时集成PLVLiveScenesSDK，产生冲突,需要修改为以下podfile
+如果同时集成PLVLiveScenesSDK，产生冲突需要修改为以下podfile
 
 ```ruby
 platform :ios, "9.0"
@@ -90,6 +90,7 @@ platform :ios, "9.0"
 use_frameworks!
 
 target 'PLVRtmpDemo' do
+  #pod 'PolyvBusinessSDK', '~> 0.15.0'
   pod'PolyvSocketAPI/Core', '~> 0.15.0'
   pod'PLVLiveScenesSDK', '~> 1.2.2'
 end
