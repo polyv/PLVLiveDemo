@@ -55,7 +55,7 @@
 
 ### 5 依赖库
 
-使用 CocoaPods 将各个依赖库集成到项目中。首先，在项目中新建一个 Podfile 文件，添加以下内容（2.3.0之前版本）
+使用 CocoaPods 将各个依赖库集成到项目中。首先，在项目中新建一个 Podfile 文件，添加以下内容
 
 ```ruby
 #source 'https://github.com/CocoaPods/Specs.git'
@@ -82,9 +82,7 @@ target 'PLVRtmpDemo' do
     pod 'UMengUShare/Social/QQ' , '~> 6.3.0'
 end
 ```
-
-或以下方式（2.3.0 版本及以上）
-
+如果同时集成PLVLiveScenesSDK，产生冲突,需要修改为以下podfile
 
 ```ruby
 platform :ios, "9.0"
@@ -92,9 +90,8 @@ platform :ios, "9.0"
 use_frameworks!
 
 target 'PLVRtmpDemo' do
-  pod 'PLVLiveKit', '~> 1.2.4'
-  pod 'PolyvLiveAPI', '~> 0.9.0'
-  pod 'PolyvBusinessSDK', '~> 0.15.0'
+  pod'PolyvSocketAPI/Core', '~> 0.15.0'
+  pod'PLVLiveScenesSDK', '~> 1.2.2'
 end
 ```
 
