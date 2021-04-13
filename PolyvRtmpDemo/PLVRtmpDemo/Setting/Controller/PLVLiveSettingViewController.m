@@ -33,6 +33,8 @@
 @property (nonatomic, copy) NSArray *videoQualityArr;
 /// 美颜开关
 @property (nonatomic, copy) NSArray *beautifyFaceArr;
+/// 镜像开关
+@property (nonatomic, copy) NSArray *mirrorArr;
 
 /// 直播间标题
 @property (nonatomic, strong) UITextField *liveTitleField;
@@ -40,6 +42,7 @@
 @property (nonatomic, assign) NSInteger selectedRtmpModeRow;
 @property (nonatomic, assign) NSInteger selectedVideoQualityRow;
 @property (nonatomic, assign) NSInteger selectedbeautifyFaceRow;
+@property (nonatomic, assign) NSInteger selectedMirrorRow;
 /// 分享视图
 @property (nonatomic, strong) UIView *shareContentView;
 
@@ -69,10 +72,12 @@
 - (void)initSetting{
     self.setting.landscapeEnable = YES;
     self.setting.definition = PLVDefinitionHigh;
+    self.setting.mirrorEnable = YES;
     /// 默认参数
     self.selectedRtmpModeRow = 1;
     self.selectedVideoQualityRow = 1;
     self.selectedbeautifyFaceRow = 1;
+    self.selectedMirrorRow = 0;
 }
 
 - (void)setupUI {
@@ -298,7 +303,7 @@
 #pragma mark - <UITableViewDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1 || indexPath.section == 2 || indexPath.section == 3) {
+    if (indexPath.section != 5) {
         /// 实现单选
         [PLVSettingViewModel configRadioButtonWithTableView:tableView indexPathSelected:indexPath];
         // 处理选项
@@ -313,6 +318,9 @@
             case 3:
                 self.selectedbeautifyFaceRow = indexPath.row;
                 break;
+            case 4:
+                self.selectedMirrorRow = indexPath.row;
+                break;
             default:
                 break;
         }
@@ -324,7 +332,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 4) {
+    if (indexPath.section == 5) {
         return 112;
     } else {
         return 44;
@@ -343,6 +351,8 @@
         headView.textLabel.text = @"推流清晰度";
     } else if (section == 3){
         headView.textLabel.text = @"美颜开关";
+    } else if (section == 4) {
+        headView.textLabel.text = @"镜像开关";
     } else {
         headView.textLabel.text = @"分享到";
     }
@@ -363,7 +373,7 @@
 #pragma mark - <UITableViewDataSource>
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 5;
+    return 6;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -373,8 +383,10 @@
         return self.rtmpModeArr.count;
     } else if (section == 2) {
         return self.videoQualityArr.count;
-    } else if (section == 3){
+    } else if (section == 3) {
         return self.beautifyFaceArr.count;
+    } else if (section == 4) {
+        return self.mirrorArr.count;
     } else {
         return 1;
     }
@@ -399,6 +411,9 @@
     } else if (indexPath.section == 3){
         cell.textLabel.text = self.beautifyFaceArr[indexPath.row];
         cell.accessoryType = (indexPath.row == _selectedbeautifyFaceRow) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    } else if (indexPath.section == 4) {
+        cell.textLabel.text = self.mirrorArr[indexPath.row];
+        cell.accessoryType = (indexPath.row == _selectedMirrorRow) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
     } else {
         cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
         if (![cell.contentView.subviews containsObject:self.shareContentView]) {
@@ -498,6 +513,13 @@
         _beautifyFaceArr = @[@"开启美颜", @"关闭美颜"];
     }
     return _beautifyFaceArr;
+}
+
+- (NSArray *)mirrorArr {
+    if (!_mirrorArr) {
+        _mirrorArr = @[@"开启镜像", @"关闭镜像"];
+    }
+    return _mirrorArr;
 }
 
 

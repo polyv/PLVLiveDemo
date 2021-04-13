@@ -38,6 +38,9 @@
 @property (nonatomic, strong) PLVLiveMaskView *maskView;
 @property (strong, nonatomic) PLVCountdownView *countdownView;
 
+/// 提示视图，防止出现提示信息时挡住button的点击事件
+@property (nonatomic, strong) UIView *hudView;
+
 @property (nonatomic, strong) LFLiveSession *liveSession;
 @property (nonatomic, strong) NSString *urlRTMP;
 @property (nonatomic, assign) CGFloat liveSpeed;
@@ -48,6 +51,8 @@
 @property (nonatomic, strong) PLVSocketObject *login;
 // Socket 登录成功
 @property (nonatomic, assign) BOOL loginSuccess;
+// 推流中断前的累积推流时间
+@property (nonatomic, assign) long lastTime;
 
 @property (nonatomic, strong) ZJZDanMu *danmuLayer;
 
@@ -147,6 +152,7 @@ NSString *ErrorCodeStringWithLFLiveSocketErrorCode(LFLiveSocketErrorCode errorCo
         _liveSession.reconnectCount = 3;
         _liveSession.reconnectInterval = 3;
         _liveSession.beautyFace = self.setting.beautyEnable;
+        _liveSession.mirror = self.setting.mirrorEnable;
         NSLog(@"create LFLiveSession");
     }
     return _liveSession;
@@ -157,6 +163,14 @@ NSString *ErrorCodeStringWithLFLiveSocketErrorCode(LFLiveSocketErrorCode errorCo
         _urlRTMP = [NSString new];
     }
     return _urlRTMP;
+}
+
+- (UIView *)hudView {
+    if (!_hudView) {
+        _hudView = [[UIView alloc]init];
+        _hudView.backgroundColor = [UIColor clearColor];
+    }
+    return _hudView;
 }
 
 #pragma mark - Life cycle
@@ -199,10 +213,12 @@ NSString *ErrorCodeStringWithLFLiveSocketErrorCode(LFLiveSocketErrorCode errorCo
     [self.maskView.barrageBtn addTarget:self action:@selector(barrageSwitch:) forControlEvents:UIControlEventTouchUpInside];
     [self.maskView.camBtn addTarget:self action:@selector(camSwitch:) forControlEvents:UIControlEventTouchUpInside];
     [self.maskView.flashBtn addTarget:self action:@selector(flashSwitch:) forControlEvents:UIControlEventTouchUpInside];
+    [self.maskView.mirrorBtn addTarget:self action:@selector(mirrorSwitch:) forControlEvents:UIControlEventTouchUpInside];
     [self.maskView.retryBtn addTarget:self action:@selector(retryBtnBeClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     // 设置默认开关值
     self.maskView.beautyBtn.selected = !self.setting.beautyEnable;
+    self.maskView.mirrorBtn.selected = !self.setting.mirrorEnable;
         
     __weak typeof(self) weakSelf = self;
     [self.setting requestUrlRtmpWithCompletionHandler:^(NSString *urlRTMP) {
@@ -216,7 +232,6 @@ NSString *ErrorCodeStringWithLFLiveSocketErrorCode(LFLiveSocketErrorCode errorCo
         NSLog(@"status = %@", [PLVReachabilityManager sharedManager].localizedNetworkReachabilityStatusString);
         if (status == PLVReachabilityStatusNotReachable) {
             [weakSelf endLive];
-            weakSelf.liveSession.running = NO;
             [weakSelf.maskView setLiveStatus:@"网络中断"];
             [weakSelf showAlertWithErrorMessage:@"网络连接失败，请稍后重试"];
         } else {
@@ -266,7 +281,12 @@ NSString *ErrorCodeStringWithLFLiveSocketErrorCode(LFLiveSocketErrorCode errorCo
     self.pinchGesture.enabled = NO;
     [self.view addGestureRecognizer:self.pinchGesture];
     
-    //[self configShareButton];
+    [self.previewView addSubview:self.hudView];
+    [self.hudView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_offset(0);
+        make.size.mas_equalTo(CGSizeMake(200, 200));
+    }];
+    
 }
 
 - (void)setupAV {
@@ -338,11 +358,12 @@ NSString *ErrorCodeStringWithLFLiveSocketErrorCode(LFLiveSocketErrorCode errorCo
 }
 
 - (void)startCountdown {
-    __block long count = 0;
+    __block long count = self.lastTime;
     __block CGFloat lastSpeed;
     __weak typeof(self) weakSelf = self;
     [[PLVTimerManager sharedTimerManager] scheduledDispatchTimerWithName:LIVE_TIME_COUNT_TIMER timeInterval:1.0 queue:nil repeats:YES actionOption:AbandonPreviousAction action:^{
         count ++;
+        self.lastTime = count;
         [weakSelf.maskView setLiveTime:count];
         if (lastSpeed == weakSelf.liveSpeed) {
             weakSelf.liveSpeed = 0;
@@ -362,6 +383,7 @@ NSString *ErrorCodeStringWithLFLiveSocketErrorCode(LFLiveSocketErrorCode errorCo
         LFLiveStreamInfo *streamInfo = [LFLiveStreamInfo new];
         streamInfo.appVersionInfo = APP_VERSION;
         [streamInfo setUrl:self.urlRTMP];
+        self.liveSession.running = YES;
         [self.liveSession startLive:streamInfo];
     });
 }
@@ -374,6 +396,8 @@ NSString *ErrorCodeStringWithLFLiveSocketErrorCode(LFLiveSocketErrorCode errorCo
         NSLog(@"urlRTMP = %@", urlRTMP);
         weakSelf.urlRTMP = urlRTMP;
         [weakSelf startLive];
+        self.liveSession.running = YES;
+        [self startCountdown];
     }];
     
     if (self.socketIO) {
@@ -394,6 +418,7 @@ NSString *ErrorCodeStringWithLFLiveSocketErrorCode(LFLiveSocketErrorCode errorCo
     [self.liveSession stopLive];
     [self.maskView setLiveSpeed:0];
     [[PLVTimerManager sharedTimerManager] cancelAllTimer];
+    self.liveSession.running = NO;
 }
 
 // 发送弹幕
@@ -450,7 +475,6 @@ NSString *ErrorCodeStringWithLFLiveSocketErrorCode(LFLiveSocketErrorCode errorCo
         [self clearSocketObject];     //  关闭聊天室
         
         [weakSelf endLive];
-        self.liveSession.running = NO;
         PLVLiveEndView *endView = [[PLVLiveEndView alloc] initWithFrame:weakSelf.view.bounds];
         [endView setLivePopulation:weakSelf.maskView.viewerCount];
         [endView setLiveTime:weakSelf.maskView.liveTime];
@@ -466,19 +490,19 @@ NSString *ErrorCodeStringWithLFLiveSocketErrorCode(LFLiveSocketErrorCode errorCo
 - (void)micSwitch:(UIButton *)sender {
     sender.selected = !sender.isSelected;
     self.liveSession.muted = sender.isSelected;
-    [PLVUtil showHUDViewWithMessage:sender.isSelected?@"静音模式":@"关闭静音" superView:self.view];
+    [PLVUtil showHUDViewWithMessage:sender.isSelected?@"静音模式":@"关闭静音" superView:self.hudView];
 }
 
 - (void)beautySwitch:(UIButton *)sender {
     sender.selected = !sender.isSelected;
     self.liveSession.beautyFace = !sender.isSelected;
-    [PLVUtil showHUDViewWithMessage:sender.isSelected?@"关闭美颜":@"美颜模式" superView:self.view];
+    [PLVUtil showHUDViewWithMessage:sender.isSelected?@"关闭美颜":@"美颜模式" superView:self.hudView];
 }
 
 - (void)barrageSwitch:(UIButton *)sender {
     sender.selected = !sender.isSelected;
     [self.danmuLayer setHidden:sender.isSelected];
-    [PLVUtil showHUDViewWithMessage:sender.isSelected?@"关闭弹幕":@"显示弹幕" superView:self.view];
+    [PLVUtil showHUDViewWithMessage:sender.isSelected?@"关闭弹幕":@"显示弹幕" superView:self.hudView];
 }
 
 - (void)camSwitch:(UIButton *)sender {
@@ -486,13 +510,19 @@ NSString *ErrorCodeStringWithLFLiveSocketErrorCode(LFLiveSocketErrorCode errorCo
     AVCaptureDevicePosition devicePosition = self.liveSession.captureDevicePosition;
     self.liveSession.captureDevicePosition = (devicePosition == AVCaptureDevicePositionBack) ? AVCaptureDevicePositionFront : AVCaptureDevicePositionBack;
     self.maskView.flashBtn.enabled = self.liveSession.captureDevicePosition == AVCaptureDevicePositionBack;
-    [PLVUtil showHUDViewWithMessage:@"切换摄像头" superView:self.view];
+    [PLVUtil showHUDViewWithMessage:@"切换摄像头" superView:self.hudView];
 }
 
 - (void)flashSwitch:(UIButton *)sender {
     sender.selected = !sender.isSelected;
     self.liveSession.torch = sender.isSelected;
-    [PLVUtil showHUDViewWithMessage:sender.isSelected?@"开启闪光灯":@"关闭闪光灯" superView:self.view];
+    [PLVUtil showHUDViewWithMessage:sender.isSelected?@"开启闪光灯":@"关闭闪光灯" superView:self.hudView];
+}
+
+- (void)mirrorSwitch:(UIButton *)sender {
+    sender.selected = !sender.isSelected;
+    self.liveSession.mirror = !sender.isSelected;
+    [PLVUtil showHUDViewWithMessage:sender.isSelected?@"关闭镜像":@"开启镜像" superView:self.hudView];
 }
 
 #pragma mark UIGestureRecognizer
@@ -525,7 +555,6 @@ NSString *ErrorCodeStringWithLFLiveSocketErrorCode(LFLiveSocketErrorCode errorCo
 /// 倒计时结束回调
 - (void)countdownViewDidEnd:(PLVCountdownView *)countdownView{
     self.maskView.hidden = NO;
-    self.liveSession.running = YES;
     self.pinchGesture.enabled = YES;
     
     if (self.urlRTMP && self.urlRTMP.length) {
@@ -567,7 +596,10 @@ NSString *ErrorCodeStringWithLFLiveSocketErrorCode(LFLiveSocketErrorCode errorCo
 
 - (void)liveSession:(nullable LFLiveSession *)session errorCode:(LFLiveSocketErrorCode)errorCode {
     NSLog(@"%@ %@",NSStringFromSelector(_cmd),ErrorCodeStringWithLFLiveSocketErrorCode(errorCode));
-    [self showAlertWithErrorMessage:[NSString stringWithFormat:@"当前网络不佳，请稍后再试 #%lu",errorCode]];
+    [self endLive];
+    [self showAlertWithErrorMessage:[NSString stringWithFormat:@"推流失败，请重新推流！ #%lu",errorCode]];
+    [self.maskView setShowRetryButton:YES];
+    [self.maskView setLiveStatus:@"已断开" color:[UIColor redColor]];
 }
 
 #pragma mark - <PLVSocketIODelegate>

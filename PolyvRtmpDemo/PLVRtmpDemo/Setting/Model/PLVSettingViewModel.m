@@ -71,6 +71,18 @@
             }
             break;
         }
+        case 4: { // 镜像开关
+            switch (indexPath.row) {
+                case 0: { // 开启美颜
+                    setting.mirrorEnable = YES;
+                } break;
+                case 1: { // 关闭美颜
+                    setting.mirrorEnable = NO;
+                } break;
+                default: {} break;
+            }
+            break;
+        }
         default: {} break;
     }
 }

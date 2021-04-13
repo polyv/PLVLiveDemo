@@ -4,7 +4,7 @@ platform :ios, "9.0"
 use_frameworks!
 
 target 'PLVRtmpDemo' do
-  pod 'PLVLiveKit', '~> 1.2.4'
+  pod 'PLVLiveKit', '~> 1.2.7'
   pod 'PolyvLiveAPI', '~> 0.9.0'
   pod 'PolyvBusinessSDK', '~> 0.15.0'
   # 如果同时集成云课堂SDK，移除 PolyvBusinessSDK 即可
