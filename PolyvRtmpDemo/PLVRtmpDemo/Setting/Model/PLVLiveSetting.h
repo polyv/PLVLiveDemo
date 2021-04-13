@@ -34,6 +34,8 @@ typedef NS_ENUM(NSInteger, PLVDefinition) {
 @property (nonatomic, assign) NSUInteger maxRate;
 /// 美颜开关
 @property (nonatomic, assign) BOOL beautyEnable;
+/// 镜像开关
+@property (nonatomic, assign) BOOL mirrorEnable;
 /// 聊天室房间号(分房间场景下，将返回第一个分房间号；其他场景返回 channelId；若分房间号为nil，则返回 channelId)
 @property (nonatomic, copy) NSString *chatRoomId;
 

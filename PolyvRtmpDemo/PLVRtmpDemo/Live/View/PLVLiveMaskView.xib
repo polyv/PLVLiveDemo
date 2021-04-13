@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,7 +11,7 @@
             <connections>
                 <outlet property="barrageBtn" destination="he0-gO-lf7" id="bay-J9-yl2"/>
                 <outlet property="beautyBtn" destination="21U-AB-ZM9" id="KVv-Cs-zKc"/>
-                <outlet property="camBtn" destination="nwu-zb-3AL" id="g7A-pE-eZj"/>
+                <outlet property="camBtn" destination="toD-Yl-L19" id="War-4Y-odB"/>
                 <outlet property="channelAvatar" destination="PQa-YS-jxa" id="pWI-DA-lfu"/>
                 <outlet property="closeBtn" destination="RWV-Wh-XD3" id="ZUw-B5-i3c"/>
                 <outlet property="flashBtn" destination="GbI-lT-lrf" id="1fz-NL-eRz"/>
@@ -19,6 +19,7 @@
                 <outlet property="liveStatusLabel" destination="pj3-H1-4AT" id="QEA-gs-q8R"/>
                 <outlet property="liveTimeLabel" destination="Faf-q8-yUO" id="qeB-9b-wZP"/>
                 <outlet property="micBtn" destination="YSm-Wa-L63" id="Sll-OU-dYK"/>
+                <outlet property="mirrorBtn" destination="nwu-zb-3AL" id="FTb-tt-Cwu"/>
                 <outlet property="moreView" destination="IkH-38-QMG" id="B0b-6S-kgw"/>
                 <outlet property="retryBtn" destination="lYG-ew-07n" id="Kqc-0H-mg5"/>
                 <outlet property="viewerListView" destination="MtC-Y2-mfa" id="uTh-I8-BEA"/>
@@ -135,32 +136,33 @@
                     </connections>
                 </button>
                 <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IkH-38-QMG">
-                    <rect key="frame" x="349" y="254" width="44" height="111"/>
+                    <rect key="frame" x="349" y="209" width="44" height="156"/>
                     <subviews>
                         <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plv_round_bg_44" translatesAutoresizingMaskIntoConstraints="NO" id="3js-cB-eZX">
-                            <rect key="frame" x="0.0" y="0.0" width="44" height="111"/>
+                            <rect key="frame" x="0.0" y="0.0" width="44" height="156"/>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="qgM-d0-0bA">
-                            <rect key="frame" x="0.0" y="11" width="44" height="89"/>
+                            <rect key="frame" x="0.0" y="11" width="44" height="134"/>
                             <subviews>
-                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2d-pW-REG">
-                                    <rect key="frame" x="0.0" y="0.0" width="44" height="0.0"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" priority="750" constant="44" id="5kc-vL-LDa"/>
-                                        <constraint firstAttribute="width" priority="750" constant="44" id="eGr-2B-kod"/>
-                                    </constraints>
-                                    <state key="normal" image="plv_share"/>
-                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwu-zb-3AL">
                                     <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="44" id="3WZ-5q-HxH"/>
                                         <constraint firstAttribute="height" constant="44" id="FRu-7V-1eb"/>
                                     </constraints>
+                                    <state key="normal" image="plv_mirror_open"/>
+                                    <state key="selected" image="plv_mirror_open"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toD-Yl-L19">
+                                    <rect key="frame" x="0.0" y="45" width="44" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="0M5-fb-V8X"/>
+                                        <constraint firstAttribute="width" constant="44" id="iey-P9-9Qs"/>
+                                    </constraints>
                                     <state key="normal" image="plv_cam"/>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbI-lT-lrf">
-                                    <rect key="frame" x="0.0" y="45" width="44" height="44"/>
+                                    <rect key="frame" x="0.0" y="90" width="44" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="44" id="6Yh-zF-QIo"/>
                                         <constraint firstAttribute="height" constant="44" id="tHr-M3-XgJ"/>
@@ -233,9 +235,9 @@
         <image name="plv_flash_on" width="24" height="24"/>
         <image name="plv_mic_off" width="44" height="44"/>
         <image name="plv_mic_on" width="44" height="44"/>
+        <image name="plv_mirror_open" width="24" height="24"/>
         <image name="plv_more" width="44" height="44"/>
         <image name="plv_round_bg_44" width="44" height="44"/>
-        <image name="plv_share" width="24" height="24"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

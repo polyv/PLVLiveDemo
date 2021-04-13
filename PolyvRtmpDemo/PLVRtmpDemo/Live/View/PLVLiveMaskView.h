@@ -14,6 +14,7 @@
 @interface PLVLiveMaskView : UIView
 
 #pragma mark 控件
+@property (weak, nonatomic) IBOutlet UIButton *chatBtn;
 @property (weak, nonatomic) IBOutlet UIButton *micBtn;
 @property (weak, nonatomic) IBOutlet UIButton *closeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *beautyBtn;
@@ -21,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *camBtn;
 @property (weak, nonatomic) IBOutlet UIButton *flashBtn;
 @property (weak, nonatomic) IBOutlet UIButton *retryBtn;
+@property (weak, nonatomic) IBOutlet UIButton *mirrorBtn;
 
 #pragma mark 头像视图
 @property (weak, nonatomic) IBOutlet PLVChanelAvatarView *channelAvatar;
