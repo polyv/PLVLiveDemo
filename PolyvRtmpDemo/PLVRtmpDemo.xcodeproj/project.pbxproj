@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042DE4EE263A587200001261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042DE4DC263A587200001261 /* Main.storyboard */; };
+		042DE4EF263A587200001261 /* PLVLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042DE4E2263A587200001261 /* PLVLoginViewController.m */; };
+		042DE4F0263A587300001261 /* PLVPrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042DE4E3263A587200001261 /* PLVPrivacyViewController.m */; };
+		042DE4F1263A587300001261 /* PLVCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 042DE4E6263A587200001261 /* PLVCustomization.m */; };
+		042DE4F2263A587300001261 /* PLVCheckPrivacyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 042DE4E9263A587200001261 /* PLVCheckPrivacyView.m */; };
+		042DE4F3263A587300001261 /* PLVCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 042DE4EA263A587200001261 /* PLVCheckBox.m */; };
+		042DE4F4263A587300001261 /* PLVLoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 042DE4EB263A587200001261 /* PLVLoginTextField.m */; };
+		042DE501263A58A500001261 /* AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 042DE4F7263A58A500001261 /* AES.m */; };
+		042DE502263A58A500001261 /* PLVUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 042DE4F8263A58A500001261 /* PLVUtil.m */; };
+		042DE503263A58A500001261 /* PLVUtil+Share.m in Sources */ = {isa = PBXBuildFile; fileRef = 042DE4F9263A58A500001261 /* PLVUtil+Share.m */; };
+		042DE504263A58A500001261 /* PLVReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 042DE4FB263A58A500001261 /* PLVReachabilityManager.m */; };
+		042DE505263A58A500001261 /* PLVTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 042DE4FF263A58A500001261 /* PLVTimerManager.m */; };
 		0431635D25B138450045C103 /* PLVEmojiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431635725B138450045C103 /* PLVEmojiManager.m */; };
 		0431635E25B138450045C103 /* ZJZDanMu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431635925B138450045C103 /* ZJZDanMu.m */; };
 		0431635F25B138450045C103 /* ZJZDanMuLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431635B25B138450045C103 /* ZJZDanMuLabel.m */; };
@@ -17,11 +29,6 @@
 		0431637425B138580045C103 /* UIImage+PLV.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431636B25B138580045C103 /* UIImage+PLV.m */; };
 		0431637525B138580045C103 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431636C25B138580045C103 /* NSData+CommonCrypto.m */; };
 		0431637625B138580045C103 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431636D25B138580045C103 /* NSData+Base64.m */; };
-		0431639925B139160045C103 /* AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431638F25B139160045C103 /* AES.m */; };
-		0431639A25B139160045C103 /* PLVUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431639025B139160045C103 /* PLVUtil.m */; };
-		0431639B25B139160045C103 /* PLVUtil+Share.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431639125B139160045C103 /* PLVUtil+Share.m */; };
-		0431639C25B139160045C103 /* PLVReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431639325B139160045C103 /* PLVReachabilityManager.m */; };
-		0431639D25B139160045C103 /* PLVTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431639725B139160045C103 /* PLVTimerManager.m */; };
 		043163A825B139590045C103 /* login_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 043163A225B139590045C103 /* login_bg@3x.png */; };
 		043163A925B139590045C103 /* login_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 043163A325B139590045C103 /* login_bg@2x.png */; };
 		043163AA25B139590045C103 /* README_Customization.md in Resources */ = {isa = PBXBuildFile; fileRef = 043163A425B139590045C103 /* README_Customization.md */; };
@@ -29,13 +36,6 @@
 		043163AC25B139590045C103 /* launchImge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 043163A625B139590045C103 /* launchImge@2x.png */; };
 		043163AD25B139590045C103 /* launchImge@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 043163A725B139590045C103 /* launchImge@3x.png */; };
 		043163B125B1397A0045C103 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043163B025B1397A0045C103 /* LaunchScreen.storyboard */; };
-		04DF146B262535E500197F45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DF1435262535E500197F45 /* Main.storyboard */; };
-		04DF146C262535E500197F45 /* PLVLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF143B262535E500197F45 /* PLVLoginViewController.m */; };
-		04DF146D262535E500197F45 /* PLVPrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF143C262535E500197F45 /* PLVPrivacyViewController.m */; };
-		04DF146E262535E500197F45 /* PLVCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF143F262535E500197F45 /* PLVCustomization.m */; };
-		04DF146F262535E500197F45 /* PLVCheckPrivacyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF1442262535E500197F45 /* PLVCheckPrivacyView.m */; };
-		04DF1470262535E500197F45 /* PLVCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF1443262535E500197F45 /* PLVCheckBox.m */; };
-		04DF1471262535E500197F45 /* PLVLoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF1444262535E500197F45 /* PLVLoginTextField.m */; };
 		04DF1472262535E500197F45 /* PLVLiveSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF144B262535E500197F45 /* PLVLiveSettingViewController.m */; };
 		04DF1473262535E500197F45 /* PLVLiveSettingViewController+Share.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF144C262535E500197F45 /* PLVLiveSettingViewController+Share.m */; };
 		04DF1474262535E500197F45 /* PLVLiveSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF144F262535E500197F45 /* PLVLiveSetting.m */; };
@@ -103,6 +103,29 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		042DE4DD263A587200001261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		042DE4E0263A587200001261 /* PLVLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVLoginViewController.h; sourceTree = "<group>"; };
+		042DE4E1263A587200001261 /* PLVPrivacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVPrivacyViewController.h; sourceTree = "<group>"; };
+		042DE4E2263A587200001261 /* PLVLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVLoginViewController.m; sourceTree = "<group>"; };
+		042DE4E3263A587200001261 /* PLVPrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVPrivacyViewController.m; sourceTree = "<group>"; };
+		042DE4E5263A587200001261 /* PLVCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVCustomization.h; sourceTree = "<group>"; };
+		042DE4E6263A587200001261 /* PLVCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVCustomization.m; sourceTree = "<group>"; };
+		042DE4E8263A587200001261 /* PLVLoginTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVLoginTextField.h; sourceTree = "<group>"; };
+		042DE4E9263A587200001261 /* PLVCheckPrivacyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVCheckPrivacyView.m; sourceTree = "<group>"; };
+		042DE4EA263A587200001261 /* PLVCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVCheckBox.m; sourceTree = "<group>"; };
+		042DE4EB263A587200001261 /* PLVLoginTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVLoginTextField.m; sourceTree = "<group>"; };
+		042DE4EC263A587200001261 /* PLVCheckPrivacyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVCheckPrivacyView.h; sourceTree = "<group>"; };
+		042DE4ED263A587200001261 /* PLVCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVCheckBox.h; sourceTree = "<group>"; };
+		042DE4F7263A58A500001261 /* AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AES.m; sourceTree = "<group>"; };
+		042DE4F8263A58A500001261 /* PLVUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVUtil.m; sourceTree = "<group>"; };
+		042DE4F9263A58A500001261 /* PLVUtil+Share.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PLVUtil+Share.m"; sourceTree = "<group>"; };
+		042DE4FA263A58A500001261 /* PLVTimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVTimerManager.h; sourceTree = "<group>"; };
+		042DE4FB263A58A500001261 /* PLVReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVReachabilityManager.m; sourceTree = "<group>"; };
+		042DE4FC263A58A500001261 /* PLVUtil+Share.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PLVUtil+Share.h"; sourceTree = "<group>"; };
+		042DE4FD263A58A500001261 /* PLVUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVUtil.h; sourceTree = "<group>"; };
+		042DE4FE263A58A500001261 /* AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AES.h; sourceTree = "<group>"; };
+		042DE4FF263A58A500001261 /* PLVTimerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVTimerManager.m; sourceTree = "<group>"; };
+		042DE500263A58A500001261 /* PLVReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVReachabilityManager.h; sourceTree = "<group>"; };
 		0431635625B138450045C103 /* PLVEmojiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVEmojiManager.h; sourceTree = "<group>"; };
 		0431635725B138450045C103 /* PLVEmojiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVEmojiManager.m; sourceTree = "<group>"; };
 		0431635925B138450045C103 /* ZJZDanMu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJZDanMu.m; sourceTree = "<group>"; };
@@ -123,16 +146,6 @@
 		0431636D25B138580045C103 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		0431636E25B138580045C103 /* UIView+YYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YYAdd.h"; sourceTree = "<group>"; };
 		0431636F25B138580045C103 /* UIColor+PLV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PLV.h"; sourceTree = "<group>"; };
-		0431638F25B139160045C103 /* AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AES.m; sourceTree = "<group>"; };
-		0431639025B139160045C103 /* PLVUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVUtil.m; sourceTree = "<group>"; };
-		0431639125B139160045C103 /* PLVUtil+Share.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PLVUtil+Share.m"; sourceTree = "<group>"; };
-		0431639225B139160045C103 /* PLVTimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVTimerManager.h; sourceTree = "<group>"; };
-		0431639325B139160045C103 /* PLVReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVReachabilityManager.m; sourceTree = "<group>"; };
-		0431639425B139160045C103 /* PLVUtil+Share.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PLVUtil+Share.h"; sourceTree = "<group>"; };
-		0431639525B139160045C103 /* PLVUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVUtil.h; sourceTree = "<group>"; };
-		0431639625B139160045C103 /* AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AES.h; sourceTree = "<group>"; };
-		0431639725B139160045C103 /* PLVTimerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVTimerManager.m; sourceTree = "<group>"; };
-		0431639825B139160045C103 /* PLVReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVReachabilityManager.h; sourceTree = "<group>"; };
 		043163A225B139590045C103 /* login_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_bg@3x.png"; sourceTree = "<group>"; };
 		043163A325B139590045C103 /* login_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_bg@2x.png"; sourceTree = "<group>"; };
 		043163A425B139590045C103 /* README_Customization.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README_Customization.md; sourceTree = "<group>"; };
@@ -140,19 +153,6 @@
 		043163A625B139590045C103 /* launchImge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImge@2x.png"; sourceTree = "<group>"; };
 		043163A725B139590045C103 /* launchImge@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImge@3x.png"; sourceTree = "<group>"; };
 		043163B025B1397A0045C103 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		04DF1436262535E500197F45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		04DF1439262535E500197F45 /* PLVLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVLoginViewController.h; sourceTree = "<group>"; };
-		04DF143A262535E500197F45 /* PLVPrivacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVPrivacyViewController.h; sourceTree = "<group>"; };
-		04DF143B262535E500197F45 /* PLVLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVLoginViewController.m; sourceTree = "<group>"; };
-		04DF143C262535E500197F45 /* PLVPrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVPrivacyViewController.m; sourceTree = "<group>"; };
-		04DF143E262535E500197F45 /* PLVCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVCustomization.h; sourceTree = "<group>"; };
-		04DF143F262535E500197F45 /* PLVCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVCustomization.m; sourceTree = "<group>"; };
-		04DF1441262535E500197F45 /* PLVLoginTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVLoginTextField.h; sourceTree = "<group>"; };
-		04DF1442262535E500197F45 /* PLVCheckPrivacyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVCheckPrivacyView.m; sourceTree = "<group>"; };
-		04DF1443262535E500197F45 /* PLVCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVCheckBox.m; sourceTree = "<group>"; };
-		04DF1444262535E500197F45 /* PLVLoginTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVLoginTextField.m; sourceTree = "<group>"; };
-		04DF1445262535E500197F45 /* PLVCheckPrivacyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVCheckPrivacyView.h; sourceTree = "<group>"; };
-		04DF1446262535E500197F45 /* PLVCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVCheckBox.h; sourceTree = "<group>"; };
 		04DF1449262535E500197F45 /* PLVLiveSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVLiveSettingViewController.h; sourceTree = "<group>"; };
 		04DF144A262535E500197F45 /* PLVLiveSettingViewController+Share.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PLVLiveSettingViewController+Share.h"; sourceTree = "<group>"; };
 		04DF144B262535E500197F45 /* PLVLiveSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVLiveSettingViewController.m; sourceTree = "<group>"; };
@@ -227,6 +227,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		042DE4DB263A587200001261 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				042DE4DC263A587200001261 /* Main.storyboard */,
+				042DE4DE263A587200001261 /* Login */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		042DE4DE263A587200001261 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				042DE4DF263A587200001261 /* Controller */,
+				042DE4E4263A587200001261 /* Model */,
+				042DE4E7263A587200001261 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		042DE4DF263A587200001261 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				042DE4E0263A587200001261 /* PLVLoginViewController.h */,
+				042DE4E1263A587200001261 /* PLVPrivacyViewController.h */,
+				042DE4E2263A587200001261 /* PLVLoginViewController.m */,
+				042DE4E3263A587200001261 /* PLVPrivacyViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		042DE4E4263A587200001261 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				042DE4E5263A587200001261 /* PLVCustomization.h */,
+				042DE4E6263A587200001261 /* PLVCustomization.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		042DE4E7263A587200001261 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				042DE4E8263A587200001261 /* PLVLoginTextField.h */,
+				042DE4E9263A587200001261 /* PLVCheckPrivacyView.m */,
+				042DE4EA263A587200001261 /* PLVCheckBox.m */,
+				042DE4EB263A587200001261 /* PLVLoginTextField.m */,
+				042DE4EC263A587200001261 /* PLVCheckPrivacyView.h */,
+				042DE4ED263A587200001261 /* PLVCheckBox.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		042DE4F6263A58A500001261 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				042DE4F7263A58A500001261 /* AES.m */,
+				042DE4F8263A58A500001261 /* PLVUtil.m */,
+				042DE4F9263A58A500001261 /* PLVUtil+Share.m */,
+				042DE4FA263A58A500001261 /* PLVTimerManager.h */,
+				042DE4FB263A58A500001261 /* PLVReachabilityManager.m */,
+				042DE4FC263A58A500001261 /* PLVUtil+Share.h */,
+				042DE4FD263A58A500001261 /* PLVUtil.h */,
+				042DE4FE263A58A500001261 /* AES.h */,
+				042DE4FF263A58A500001261 /* PLVTimerManager.m */,
+				042DE500263A58A500001261 /* PLVReachabilityManager.h */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		0431635525B138450045C103 /* FaceView */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,24 +337,6 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		0431638E25B139160045C103 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				0431638F25B139160045C103 /* AES.m */,
-				0431639025B139160045C103 /* PLVUtil.m */,
-				0431639125B139160045C103 /* PLVUtil+Share.m */,
-				0431639225B139160045C103 /* PLVTimerManager.h */,
-				0431639325B139160045C103 /* PLVReachabilityManager.m */,
-				0431639425B139160045C103 /* PLVUtil+Share.h */,
-				0431639525B139160045C103 /* PLVUtil.h */,
-				0431639625B139160045C103 /* AES.h */,
-				0431639725B139160045C103 /* PLVTimerManager.m */,
-				0431639825B139160045C103 /* PLVReachabilityManager.h */,
-			);
-			name = Util;
-			path = Main/Util;
-			sourceTree = "<group>";
-		};
 		043163A125B139590045C103 /* AppCustom */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,59 +348,6 @@
 				043163A725B139590045C103 /* launchImge@3x.png */,
 			);
 			path = AppCustom;
-			sourceTree = "<group>";
-		};
-		04DF1434262535E500197F45 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				04DF1435262535E500197F45 /* Main.storyboard */,
-				04DF1437262535E500197F45 /* Login */,
-			);
-			name = Main;
-			path = "../../../../gitlab/PLVRtmpDemo/polyv-ios-rtmp-demo/PolyvRtmpDemo/PLVRtmpDemo/Main";
-			sourceTree = "<group>";
-		};
-		04DF1437262535E500197F45 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				04DF1438262535E500197F45 /* Controller */,
-				04DF143D262535E500197F45 /* Model */,
-				04DF1440262535E500197F45 /* View */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		04DF1438262535E500197F45 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				04DF1439262535E500197F45 /* PLVLoginViewController.h */,
-				04DF143A262535E500197F45 /* PLVPrivacyViewController.h */,
-				04DF143B262535E500197F45 /* PLVLoginViewController.m */,
-				04DF143C262535E500197F45 /* PLVPrivacyViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		04DF143D262535E500197F45 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				04DF143E262535E500197F45 /* PLVCustomization.h */,
-				04DF143F262535E500197F45 /* PLVCustomization.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		04DF1440262535E500197F45 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				04DF1441262535E500197F45 /* PLVLoginTextField.h */,
-				04DF1442262535E500197F45 /* PLVCheckPrivacyView.m */,
-				04DF1443262535E500197F45 /* PLVCheckBox.m */,
-				04DF1444262535E500197F45 /* PLVLoginTextField.m */,
-				04DF1445262535E500197F45 /* PLVCheckPrivacyView.h */,
-				04DF1446262535E500197F45 /* PLVCheckBox.h */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		04DF1447262535E500197F45 /* Setting */ = {
@@ -490,11 +488,11 @@
 			children = (
 				67FF73B81DC1E36B00B1CDDB /* AppDelegate.h */,
 				67FF73B91DC1E36B00B1CDDB /* AppDelegate.m */,
+				042DE4DB263A587200001261 /* Main */,
 				04DF1452262535E500197F45 /* Live */,
-				04DF1434262535E500197F45 /* Main */,
+				042DE4F6263A58A500001261 /* Util */,
 				04DF1447262535E500197F45 /* Setting */,
 				67D59C5622364582009A3210 /* Library */,
-				0431638E25B139160045C103 /* Util */,
 				0431636125B138580045C103 /* Category */,
 				67227D442297E65E0094E030 /* Supporting Files */,
 			);
@@ -617,13 +615,13 @@
 				043163AD25B139590045C103 /* launchImge@3x.png in Resources */,
 				04DF1478262535E500197F45 /* PLVLiveEndView.xib in Resources */,
 				043163AA25B139590045C103 /* README_Customization.md in Resources */,
+				042DE4EE263A587200001261 /* Main.storyboard in Resources */,
 				04DF1481262535E500197F45 /* PLVCountdownView.xib in Resources */,
 				043163A825B139590045C103 /* login_bg@3x.png in Resources */,
 				043163A925B139590045C103 /* login_bg@2x.png in Resources */,
 				04DF147A262535E500197F45 /* PLVLiveMaskView.xib in Resources */,
 				043163AB25B139590045C103 /* ColorCustom.plist in Resources */,
 				043163B125B1397A0045C103 /* LaunchScreen.storyboard in Resources */,
-				04DF146B262535E500197F45 /* Main.storyboard in Resources */,
 				04DF14852625370200197F45 /* Assets.xcassets in Resources */,
 				043163AC25B139590045C103 /* launchImge@2x.png in Resources */,
 			);
@@ -714,40 +712,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04DF146E262535E500197F45 /* PLVCustomization.m in Sources */,
 				04DF1474262535E500197F45 /* PLVLiveSetting.m in Sources */,
 				0431637525B138580045C103 /* NSData+CommonCrypto.m in Sources */,
+				042DE505263A58A500001261 /* PLVTimerManager.m in Sources */,
 				04DF1480262535E500197F45 /* PLVLiveMaskViewController.m in Sources */,
-				04DF146F262535E500197F45 /* PLVCheckPrivacyView.m in Sources */,
 				04DF147D262535E500197F45 /* PLVLiveMaskView+VM.m in Sources */,
-				04DF146C262535E500197F45 /* PLVLoginViewController.m in Sources */,
-				0431639D25B139160045C103 /* PLVTimerManager.m in Sources */,
+				042DE4F0263A587300001261 /* PLVPrivacyViewController.m in Sources */,
 				0431637125B138580045C103 /* UIColor+PLV.m in Sources */,
 				04DF147C262535E500197F45 /* PLVChanelAvatarView.m in Sources */,
 				67FF73BA1DC1E36B00B1CDDB /* AppDelegate.m in Sources */,
 				04DF1477262535E500197F45 /* PLVViewer.m in Sources */,
 				0431637625B138580045C103 /* NSData+Base64.m in Sources */,
+				042DE4F2263A587300001261 /* PLVCheckPrivacyView.m in Sources */,
+				042DE4F3263A587300001261 /* PLVCheckBox.m in Sources */,
 				04DF1472262535E500197F45 /* PLVLiveSettingViewController.m in Sources */,
 				04DF1479262535E500197F45 /* PLVCountdownView.m in Sources */,
 				0431637325B138580045C103 /* UIControl+YYAdd.m in Sources */,
 				0431637025B138580045C103 /* NSString+Base64.m in Sources */,
-				04DF1471262535E500197F45 /* PLVLoginTextField.m in Sources */,
-				0431639B25B139160045C103 /* PLVUtil+Share.m in Sources */,
-				0431639A25B139160045C103 /* PLVUtil.m in Sources */,
 				0431635D25B138450045C103 /* PLVEmojiManager.m in Sources */,
-				04DF1470262535E500197F45 /* PLVCheckBox.m in Sources */,
 				04DF1473262535E500197F45 /* PLVLiveSettingViewController+Share.m in Sources */,
-				0431639C25B139160045C103 /* PLVReachabilityManager.m in Sources */,
-				04DF146D262535E500197F45 /* PLVPrivacyViewController.m in Sources */,
-				0431639925B139160045C103 /* AES.m in Sources */,
+				042DE4EF263A587200001261 /* PLVLoginViewController.m in Sources */,
 				0431637225B138580045C103 /* UIView+YYAdd.m in Sources */,
 				0431637425B138580045C103 /* UIImage+PLV.m in Sources */,
 				04DF147E262535E500197F45 /* PLVViewerAvatarCell.m in Sources */,
+				042DE503263A58A500001261 /* PLVUtil+Share.m in Sources */,
+				042DE502263A58A500001261 /* PLVUtil.m in Sources */,
 				0431635F25B138450045C103 /* ZJZDanMuLabel.m in Sources */,
 				04DF1475262535E500197F45 /* PLVSettingViewModel.m in Sources */,
 				04DF147B262535E500197F45 /* PLVLiveEndView.m in Sources */,
+				042DE504263A58A500001261 /* PLVReachabilityManager.m in Sources */,
+				042DE501263A58A500001261 /* AES.m in Sources */,
+				042DE4F4263A587300001261 /* PLVLoginTextField.m in Sources */,
 				0431635E25B138450045C103 /* ZJZDanMu.m in Sources */,
 				04DF147F262535E500197F45 /* PLVLiveMaskView.m in Sources */,
+				042DE4F1263A587300001261 /* PLVCustomization.m in Sources */,
 				67FF73B71DC1E36B00B1CDDB /* main.m in Sources */,
 				04DF1476262535E500197F45 /* PLVLiveViewController.m in Sources */,
 			);
@@ -772,10 +770,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		04DF1435262535E500197F45 /* Main.storyboard */ = {
+		042DE4DC263A587200001261 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				04DF1436262535E500197F45 /* Base */,
+				042DE4DD263A587200001261 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
