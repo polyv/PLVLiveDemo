@@ -154,6 +154,8 @@ NSString *ErrorCodeStringWithLFLiveSocketErrorCode(LFLiveSocketErrorCode errorCo
         _liveSession.beautyFace = self.setting.beautyEnable;
         _liveSession.mirror = self.setting.mirrorEnable;
         NSLog(@"create LFLiveSession");
+        //设置打印等级
+        [PLVConsoleLogger defaultLogger].logLevel = PLVConsoleLogLevelALL;
     }
     return _liveSession;
 }
@@ -600,6 +602,36 @@ NSString *ErrorCodeStringWithLFLiveSocketErrorCode(LFLiveSocketErrorCode errorCo
     [self showAlertWithErrorMessage:[NSString stringWithFormat:@"推流失败，请重新推流！ #%lu",errorCode]];
     [self.maskView setShowRetryButton:YES];
     [self.maskView setLiveStatus:@"已断开" color:[UIColor redColor]];
+}
+
+-(void)liveSession:(LFLiveSession *)session audioSessionRouteDidChange:(AVAudioSessionRouteChangeReason)audioSessionRouteChangeReason {
+    NSLog(@"音频会话线路改变事件回调");
+    NSString *seccReason = @"";
+    switch (audioSessionRouteChangeReason) {
+        case AVAudioSessionRouteChangeReasonNoSuitableRouteForCategory:
+            seccReason = @"The route changed because no suitable route is now available for the specified category.";
+            break;
+        case AVAudioSessionRouteChangeReasonWakeFromSleep:
+            seccReason = @"The route changed when the device woke up from sleep.";
+            break;
+        case AVAudioSessionRouteChangeReasonOverride:
+            seccReason = @"The output route was overridden by the app.";
+            break;
+        case AVAudioSessionRouteChangeReasonCategoryChange:
+            seccReason = @"The category of the session object changed.";
+            break;
+        case AVAudioSessionRouteChangeReasonOldDeviceUnavailable:
+            seccReason = @"The previous audio output path is no longer available.";
+            break;
+        case AVAudioSessionRouteChangeReasonNewDeviceAvailable:
+            seccReason = @"A preferred new audio output path is now available.";
+            break;
+        case AVAudioSessionRouteChangeReasonUnknown:
+        default:
+            seccReason = @"The reason for the change is unknown.";
+            break;
+    }
+    NSLog(@"handleRouteChange reason is %@", seccReason);
 }
 
 #pragma mark - <PLVSocketIODelegate>
