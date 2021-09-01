@@ -155,7 +155,7 @@ NSString *ErrorCodeStringWithLFLiveSocketErrorCode(LFLiveSocketErrorCode errorCo
         _liveSession.mirror = self.setting.mirrorEnable;
         NSLog(@"create LFLiveSession");
         //设置打印等级
-        [PLVConsoleLogger defaultLogger].logLevel = PLVConsoleLogLevelALL;
+        [PLVLFConsoleLogger defaultLogger].logLevel = PLVLFConsoleLogLevelALL;
     }
     return _liveSession;
 }
